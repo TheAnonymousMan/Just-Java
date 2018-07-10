@@ -28,8 +28,14 @@ public class MainActivity extends AppCompatActivity
 
     public void submitOrder(View view)
     {
-        display(numberOfCoffees);
-        displayPrice(numberOfCoffees*cost);
+        if(numberOfCoffees == 0)
+        {
+            String priceMessage = "Free";
+            displayMessage(priceMessage);
+        }
+
+        else
+            displayPrice(numberOfCoffees*cost);
     }
 
     /**
@@ -59,7 +65,12 @@ public class MainActivity extends AppCompatActivity
     private void display(int number)
     {
         TextView quantityTextView = (TextView) findViewById(R.id.Quantity);
+        TextView priceTextView = (TextView) findViewById(R.id.Price);
+
+        int price = number * cost;
+
         quantityTextView.setText("" + number);
+        priceTextView.setText("₹ " + price);
     }
 
 
@@ -69,8 +80,17 @@ public class MainActivity extends AppCompatActivity
     private void displayPrice(int number)
     {
         TextView priceTextView = (TextView) findViewById(R.id.Price);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        priceTextView.setText("That would be ₹ " + number + "\nThanks for ordering!");
+    }
 
+    /**
+     * This method displays a string based message.
+     */
+
+    private void displayMessage(String message)
+    {
+        TextView priceTextView = (TextView) findViewById(R.id.Price);
+        priceTextView.setText(message);
     }
 
 }

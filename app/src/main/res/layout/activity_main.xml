@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="#A1887F"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="36sp"
+        android:fontFamily="cursive"
+        android:text="Just Java"
+        android:textColor="#3E2723"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:text="Quantity"
+        android:fontFamily="@font/permanentmarkerregular"
+        android:textColor="#3E2723"
+        android:textAlignment="center"
+        android:textAllCaps="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="#3E2723"
+            android:textColor="#FAFAFA"
+            android:text="-"
+            android:fontFamily="@font/gaegubold"
+            android:onClick="decreaseCoffee"
+            />
+
+        <TextView
+            android:id="@+id/Quantity"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:fontFamily="@font/chelaoneregular"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="#3E2723"
+            android:textColor="#FAFAFA"
+            android:text="+"
+            android:fontFamily="@font/gaegubold"
+            android:onClick="increaseCoffee"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="#3E2723"
+        android:fontFamily="@font/permanentmarkerregular"
+        android:text="Price"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/Price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/chelaoneregular"
+        android:text="₹ 0.00"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#3E2723"
+        android:textColor="#FAFAFA"
+        android:fontFamily="@font/gaegubold"
+        android:onClick="submitOrder"
+        android:text="Order"
+        android:textAllCaps="true" />
+
+</LinearLayout>

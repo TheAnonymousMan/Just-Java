@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.text.NumberFormat;
 
 /**
@@ -28,14 +30,7 @@ public class MainActivity extends AppCompatActivity
 
     public void submitOrder(View view)
     {
-        if(numberOfCoffees == 0)
-        {
-            String priceMessage = "Free";
-            displayMessage(priceMessage);
-        }
-
-        else
-            displayPrice(numberOfCoffees*cost);
+        generateOrderSummary();
     }
 
     /**
@@ -91,6 +86,19 @@ public class MainActivity extends AppCompatActivity
     {
         TextView priceTextView = (TextView) findViewById(R.id.Price);
         priceTextView.setText(message);
+    }
+
+    public void generateOrderSummary()
+    {
+        TextView orderSummary = (TextView) findViewById(R.id.orderSummary);
+        TextView orderTitle = (TextView) findViewById(R.id.orderTitle);
+        String stringName = "Souporno Ghosh";
+        int price = 0;
+
+        price = cost * numberOfCoffees;
+
+        orderTitle.setText("Order Summary");
+        orderSummary.setText("\nName: " + stringName + "\nQuantity: " + numberOfCoffees +"\nTotal: ₹ " + price + "\nThank you!");
     }
 
 }

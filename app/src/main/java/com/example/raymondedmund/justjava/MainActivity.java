@@ -88,6 +88,9 @@ public class MainActivity extends AppCompatActivity
         priceTextView.setText(message);
     }
 
+    /**
+     * This method generates order summary.
+    */
     public void generateOrderSummary()
     {
         TextView orderSummary = (TextView) findViewById(R.id.orderSummary);
